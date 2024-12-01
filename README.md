@@ -37,8 +37,8 @@ Your machine should be able to run the following tools
     - On your Android device, enable Developer Developer Mode and turn on USB debugging.
     - Connect the Android deivce to your computer.
     - Execute `adb devices`. You should see your Android device listed.
-        - Check the port at which ADB daemon runs.
-            - It should say something like `* daemon not running; starting now at tcp:5037`
+        - Execute `adb tcpip 5555`
+            - 5555 is the port on which ADB will run. Choose a different port if it's occupied by something else.
         - The list might indicate your device is unauthorized
         - On your Android device, you will be asked to allow USB debugging.
         - Execute `adb devices` again to check your device status.
@@ -52,7 +52,7 @@ Your machine should be able to run the following tools
         - It will probably be something like `192.168.0.2`.
     - Open terminal on VS Code and run `adb connect ANDROID_IP:ADB_PORT`
         - Replace the `ANDROID_IP` and `ADB_PORT` with proper values.
-        - The command will look something like `adb connect 192.168.0.2:5037`
+        - The command will look something like `adb connect 192.168.0.2:5555`
 3. Run Flutter app on Android Device
     - `Ctr + Shift + P` and `Flutter: Select Device`. You should see your Android device listed. Select it.
     - On your VS Code terminal, run `flutter run`
