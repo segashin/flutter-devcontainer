@@ -1,0 +1,15 @@
+{
+  "name": "flutter_docker",
+  "context": "..",
+    "dockerFile": "../Dockerfile",
+    "remoteUser": "ubuntu",
+    "mounts": ["source=/dev/bus/usb,target=/dev/bus/usb,type=bind"],
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "dart.flutterSdkPath": "/home/ubuntu/development/flutter",
+    },
+    "runArgs": ["--privileged"],
+    "extensions": ["dart-code.flutter"],
+    "workspaceMount": "source=${localWorkspaceFolder}/workspace,target=/home/ubuntu/workspace,type=bind,consistency=delegated",
+    "workspaceFolder": "/home/ubuntu/workspace"
+}
